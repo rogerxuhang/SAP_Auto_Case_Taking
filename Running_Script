@@ -1,0 +1,79 @@
+import pyautogui
+from PIL import Image
+import time
+import sys
+
+#pyautogui.click(365,536,button='left')
+#pyautogui.scroll(-2970)
+#pyautogui.typewrite('Dear Tanaka-San,')
+
+#im=pyautogui.screenshot()
+
+
+# Take the picture for 'Dispatch'
+#picture = im.crop((392,425,452,448))
+#picture.save(r"E:/Pycharm_project/Dispatch.png")
+
+def auto_caae_taking():
+    try:
+        while True:
+            if pyautogui.locateOnScreen(r"H:/Pycharm_project/test1.png"):
+                #print(pyautogui.locateOnScreen(picture))
+                print("New case coming!")
+                # Click this new case number
+                pyautogui.click(284, 438, button='left')
+                time.sleep(6)
+                # Click 'edit'
+                pyautogui.click(377, 325, button='left')
+                time.sleep(7)
+                # Click 'Assign'
+                pyautogui.click(919, 328, button='left')
+                time.sleep(5)
+                # Input user ID
+                pyautogui.click(921, 557, button='left');
+                pyautogui.typewrite('yongz')
+                time.sleep(2)
+                # Click 'Search'
+                pyautogui.click(568, 630, button='left')
+                time.sleep(3)
+                # Click user ID
+                pyautogui.click(623, 743, button='left')
+                time.sleep(8)
+                # Click "JTAC-SRX-HE-L1"
+                pyautogui.moveTo(1171, 646)
+                time.sleep(3)
+                pyautogui.click(1171, 646, button='left')
+                time.sleep(6)
+                # Click 'Status'
+                pyautogui.click(1513, 563, button='left')
+                time.sleep(2)
+                # Click 'In Process'
+                pyautogui.click(1373, 654, button='left')
+                time.sleep(4)
+                # Click "Reason"
+                pyautogui.click(1824, 590, button='left')
+                time.sleep(2)
+                # Click 'Investigation'
+                pyautogui.click(1399, 721, button='left')
+                time.sleep(5)
+                pyautogui.click(1822,636, button='left')
+                time.sleep(5)
+                pyautogui.click(1638,711, button='left')
+                time.sleep(5)
+                # Click "Save"
+                pyautogui.click(232, 322, button='left')
+                time.sleep(5)
+                # click 'Go' to refresh
+                pyautogui.click(1762, 277, button='left')
+            else:
+                pyautogui.FAILSAFE = False
+                print("No new case")
+                # click 'Go' to refresh
+                pyautogui.click(1762, 277, button='left')
+                #time.sleep(2)
+    except KeyboardInterrupt:
+        sys.exit()
+
+
+if __name__ == '__main__':
+    auto_caae_taking()
